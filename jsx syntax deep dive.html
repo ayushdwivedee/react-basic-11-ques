@@ -15,7 +15,7 @@
       // Your task starts here
     function JSXShowcase(){
          const age=23;
-        // const hobbies=["Stock market","Cricket","Books & Podcast"];
+        const hobbies=["Stock market","Cricket","Books & Podcast"];
         // const jobStatus=false;
           return(
               <>
@@ -31,8 +31,8 @@
                 </div>
                  
                 <h3>I'm {age} year's old</h3>
+                <h4>My hobbies are : {hobbies.join(" , ")}</h4>
                 {
-                  // <h4>My hobbies are : {hobbies.join(" , ")}</h4>
                   // <h5>Working : {(jobStatus?"He is working in a tech company":"Student at prepleaf by Masai")}</h5>
                  }
                 <button onClick={()=>{alert("You have learnt HTML , CSS , Python, javascript and React yet")}}>My Skills</button>

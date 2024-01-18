@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root">root</div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+      // Your task starts here
+       function JSXShowcase(){
+        // const age=23;
+        // const hobbies=["Stock market","Cricket","Books & Podcast"];
+        // const jobStatus=false;
+          return(
+              <>
+              
+                <h1>I'm Ayush Dwivedi</h1>
+                <p>Expert in web development</p>
+                <div>
+                    <ul>
+                        <li>math</li>
+                        <li>english</li>
+                        <li>hindi</li>
+                    </ul>
+                </div>
+                 
+                 {
+                //  <h3>I'm {age} year's old</h3>
+                  // <h4>My hobbies are : {hobbies.join(" , ")}</h4>
+                  // <h5>Working : {(jobStatus?"He is working in a tech company":"Student at prepleaf by Masai")}</h5>
+                 }
+                <button onClick={()=>{alert("You have learnt HTML , CSS , Python, javascript and React yet")}}>My Skills</button>
+              </>
+          )
+       }
+    function App(){
+      return(
+        <JSXShowcase/>
+      )
+    }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</html>

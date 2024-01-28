@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature converter</title>
+    <style>
+        .box{
+  border: 1px solid rgb(55, 0, 255);
+  margin: 30px;
+  padding: 20px;
+  width: 500px;  
+  background-color: #f5f5f5;
+}
+    </style>
+  </head>
+  <body>
+    <div id="root">I am DOM</div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Code goes here
+    const root=document.getElementById("root");
+    const reactRoot=ReactDOM.createRoot(root)
+
+    function Temp(){
+        const [celsius,setCelsius]=React.useState("");
+        const [farenheit,setFarenheit]=React.useState("");
+        function CtoF(e){
+            const celVal=e.target.value;
+            const farVal= celVal !== "" ? ((9*celVal)+160)/5 :"";
+            setCelsius(celVal)
+            setFarenheit(farVal)
+        }
+
+        function FtoC(e){
+    const farVal=e.target.value;
+    const celVal= farVal !== "" ? ((5*farVal)-160)/9 :"";
+    setCelsius(celVal)
+    setFarenheit(farVal)
+}
+
+        return(
+            <>
+                <div className="box">
+                 <label>Celsius:</label>
+                 <input type="number" value={celsius} onChange={CtoF} placeholder="Temperature in Celsius"/> &nbsp;&nbsp;   
+                 <label>Fahrenheit:</label>
+                 <input type="number" value={farenheit} onChange={FtoC} placeholder="Temperature in Fahrenheit "/>
+                </div>
+            </>
+        )
+    }
+function App(){
+    return(
+        <>
+        <Temp/>
+        </>
+    )
+}
+    reactRoot.render(<App/>)
+  </script>
+</html>
+
